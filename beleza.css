@@ -1,0 +1,716 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background:black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:black;
+}
+
+/* todos os conteudos similar em estilizaçaõ*/
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .habilidades, .equipe, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.habilidades .habilidades-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position:static;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background:rgb(158, 110, 7);
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color:rgb(212, 164, 4);
+    padding: 0 5px;
+    background:#111(245, 245, 245, 0.658);
+    transform: translateX(-50%);
+}
+
+/* navbar estilizada */.menu-bg {
+    background-color: var(--midnightblue);
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: rgb(245, 244, 241);
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: rgb(252, 206, 56);
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color:rgb(160, 142, 104);
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: rgb(168, 112, 7);
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: rgb(247, 200, 47);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: rgb(223, 218, 211);
+}
+.navbar.sticky .menu li a:hover{
+    color: rgb(189, 103, 5);
+}
+
+/* estilização do menu */
+.botao{
+    color: rgb(192, 133, 6);
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.botao-de-topo{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background:rgb(241, 159, 57);
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color:rgb(207, 206, 204);
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.botao-de-topo.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.botao-de-topo:hover{
+    filter: brightness(90%);
+}
+
+
+/* estilização da home page */
+.entrar{
+    display: flex;
+    background: url("images/banner.jpg") no-repeat center;
+    height: 100vh;
+    color: rgb(247, 177, 48);
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.entrar .max-width{
+  width: 100%;
+  display: flex;
+}
+.entrar .max-width .row{
+  margin-right: 0;
+}
+.entrar .entrar-conteudo .texto-1{
+    font-size: 27px;
+}
+.entrar .entrar-conteudo .texto-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.entrar .entrar-conteudo .texto-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.entrar .entrar-conteudo .texto-3 span{
+    color:rgb(223, 147, 7);
+    font-weight: 500;
+}
+.entrar .entrar-conteudo a{
+    display: inline-block;
+    background:rgb(207, 136, 3);
+    color:rgb(192, 133, 5);
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid rgb(194, 127, 3) (0, 183, 255);
+    transition: all 0.3s ease;
+}
+.entrar .entrar-conteudo a:hover{
+    color:rgb(236, 176, 11);
+    background: none;
+}
+
+/* estilizando a parte sobre mim */
+.about .title::after{
+    content: "Quem Sou?";
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: rgb(236, 182, 46);
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: rgb(199, 144, 5);
+    color:rgb(233, 221, 183);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid rgb(141, 102, 4);
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: rgb(177, 115, 1);
+    background: none;
+}
+.carousel-inne{
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.carousel-inne .carousel-item {
+    flex: 1 1 350px;
+}
+.carousel-item{
+    flex: 1 1 350px;
+}
+
+
+
+/* estilização da area de equipe  */
+.services, .equipe{
+    color:whitesmoke;
+    background: black;
+}
+.services .title::before,
+.equipe .title::before{
+    background: black;
+}
+.services .title::after,
+.equipe .title::after{
+    background: black;
+    content: "O que eu ofereço?";
+}
+.services .serv-content .cartao{
+    width: calc(33% - 20px);
+    background: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .serv-content .cartao:hover{
+    background: goldenrod;
+}
+.services .serv-content .cartao .box{
+    transition: all 0.3s ease;
+}
+.services .serv-content .cartao:hover .box{
+    transform: scale(1.05);
+}
+.services .serv-content .cartao i{
+    font-size: 50px;
+    color: goldenrod;
+    transition: color 0.3s ease;
+}
+.services .serv-content .cartao:hover i{
+    color: whitesmoke;
+}
+.services .serv-content .cartao .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* habilidades estilizando */
+
+.habilidades .title::after{
+    content: "O que eu sei?";
+}
+.habilidades .habilidades-content .column{
+    width: calc(50% - 30px);
+}
+.habilidades .habilidades-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.habilidades .habilidades-content .left p{
+    text-align: justify;
+}
+.habilidades .habilidades-content .left a{
+    display: inline-block;
+    background:rgb(223, 204, 157);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid gol;
+    transition: all 0.3s ease;
+}
+.habilidades .habilidades-content .left a:hover{
+    color: rgb(156, 113, 4);
+    background: none;
+}
+.habilidades .habilidades-content .right .bars{
+    margin-bottom: 15px;
+}
+.habilidades .habilidades-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.habilidades .habilidades-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.habilidades .habilidades-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.habilidades .habilidades-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(153, 112, 8);
+}
+.habilidades-content .right .html::before{
+    width: 90%;
+}
+.habilidades-content .right .css::before{
+    width: 60%;
+}
+.habilidades-content .right .MarketingDigital::before{
+    width: 80%;
+}
+.habilidades-content .right .ingles::before{
+    width: 80%;
+}
+.habilidades-content .right .Helpdesk::before{
+    width: 70%;
+}
+.assista-btn{
+    display: inline-block;
+    background:#5c4301;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.ler-btn{
+    display: inline-block;
+    background:#362801;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* equipe area de estilizacao */
+.equipe .title::after{
+    content: "Quem trabalha comigo?";
+}
+.equipe .carousel .cartao{
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.equipe .carousel .cartao:hover{
+    background: rgb(160, 116, 4);
+}
+.equipe .carousel .cartao .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.equipe .carousel .cartao:hover .box{
+    transform: scale(1.05);
+}
+.equipe .carousel .cartao .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.equipe .carousel .cartao img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid goldenrod;
+    transition: all 0.3s ease;
+}
+.equipe .carousel .cartao:hover img{
+    border-color: #fff;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid goldenrod!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: goldenrod!important;
+}
+
+/* contactos estilizaçao*/
+.contact .title::after{
+    content: "Me contacte";
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: rgb(179, 129, 3);
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    color: rgb(250, 194, 11);
+}
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: rgb(252, 245, 228);
+}
+.contact .right form .textarea textarea{
+  padding-top: 10px;
+  resize: none;
+}
+.contact .right form .button-area{
+  display: flex;
+  align-items: center;
+}
+.right form .button-area button{
+  color: rgb(61, 61, 59);
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background:rgb(224, 156, 8);
+  border: 2px solid saddlebrown;
+  transition: all 0.3s ease;
+}
+.right form .button-area button:hover{
+  color: saddlebrown;
+  background: none;
+}
+/*  rodape estilo */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: rgb(235, 174, 6);
+    text-align: center;
+}
+footer span a{
+    color: goldenrod;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* tornando responsivo aff */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .botao{
+        display: block;
+        z-index: 999;
+    }
+    .botao i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background:rgb(245, 243, 237);
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-conteudo .texto-2{
+        font-size: 70px;
+    }
+    .home .home-conteudo .texto-3{
+        font-size: 35px;
+    }
+    .home .home-conteudo a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .cartao{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .habilidades .habilidades-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-conteudo .texto-2{
+        font-size: 60px;
+    }
+    .home .home-conteudo .texto-3{
+        font-size: 32px;
+    }
+    .home .home-conteudo a{
+        font-size: 20px;
+    }
+    .services .serv-content .cartao{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-conteudo .text-2{
+        font-size: 50px;
+    }
+    .home .home-conteudo .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .habilidades .habilidades-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
